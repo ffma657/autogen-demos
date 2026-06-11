@@ -25,8 +25,11 @@ import asyncio
 import sys
 
 from dataclasses import dataclass
+from pathlib import Path
 
-
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
 from autogen_agentchat.agents import AssistantAgent
 
